@@ -172,7 +172,7 @@
                             <div class="col-md-12">
 
 
-                            <form role="form" data-toggle="validator" name="contactform" method="post" action="mail.php#contact2">
+                            <form role="form" data-toggle="validator" name="contactform" method="post" action="mail.php">
                                 <div class="row">
                                     <div class="col-md-6">
                                     <div class="form-group">
