@@ -169,7 +169,7 @@
                     <h2>Contact</h2>
                                 <p>Have any questions or looking for something in perticular? Send me a message.</p>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
 
  <?php
 
@@ -189,19 +189,25 @@
                     ?>
 
                             <form role="form" data-toggle="validator" name="contactform" method="post" action="<?php echo $self;?>#contact2">
-                         
-                                <div class="form-group">
-                                    <label for="InputName">Your Name</label>
-                                    <input type="text" class="form-control" id="InputName" name="name" placeholder="Your Name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="InputEmail">Email address</label>
-                                    <input type="email" class="form-control" id="InputEmail" name="email" placeholder="Your Email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="InputMessage">Message Here</label>
-                                    <textarea cols="20" rows="5" class="form-control" id="InputMessage" name="message" placeholder="Your Message"></textarea>
-                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="InputName">Your Name</label>
+                                        <input type="text" class="form-control" id="InputName" name="name" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="InputEmail">Email address</label>
+                                        <input type="email" class="form-control" id="InputEmail" name="email" placeholder="Your Email" required>
+                                    </div>
+                                    </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="InputMessage">Message Here</label>
+                                        <textarea cols="20" rows="5" class="form-control" id="InputMessage" name="message" placeholder="Your Message"></textarea>
+                                    </div>
+                            </div>
+                                                            </div>
+
                                     <button type="submit" value="submit" class="btn btn-blue large">Submit</button>
                                 
                             </form>
