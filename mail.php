@@ -187,7 +187,9 @@
                                 mail($emailto, $subject, $message, $header);
 
                                 echo "Your email has been sent, it will be proccessed within 48hours.";
-                            
+                                header('Location: index.php');
+                                exit;
+
                             ?>
 
                         </div>
