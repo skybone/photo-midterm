@@ -184,13 +184,13 @@
 
                                 $message = "From: $name, Email: $email<br /><hr />$text";
 
-                                $mail = mail($emailto, $subject, $message, $header);
+                                mail($emailto, $subject, $message, $header);
 
                                 echo "Your email has been sent, it will be proccessed within 48hours.";
                                                                 
-                                if ($mail) {
+                            
                                     header('Location: index.php');
-                                }
+                        
 
                             ?>
 
