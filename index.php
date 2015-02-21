@@ -168,36 +168,67 @@
                 <div class="col-lg-12">
                     <h2>Contact</h2>
                                 <p>Have any questions or looking for something in perticular? Send me a message.</p>
-                    <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row">
                             <div class="col-md-6">
 
+ <?php
+
+
+
+                        if(isset($_POST['submit']))
+
+                        {
+                            echo "<h2>We've recieved your submission and will be in touch soon.</h2>";
+                            echo "<div style=\"display: none !important;>\"";
+                        } 
+
+
+                        if($_SERVER['REQUEST_METHOD'] != 'POST') {
+                        $self = $_SERVER['PHP_SELF'];
+
+                    ?>
+
+                            <form role="form" data-toggle="validator" name="contactform" method="post" action="<?php echo $self;?>#contact2">
+                         
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
-                                    <p class="help-block text-danger"></p>
+                                    <label for="InputName">Your Name</label>
+                                    <input type="text" class="form-control" id="InputName" name="name" placeholder="Your Name" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
-                                    <p class="help-block text-danger"></p>
+                                    <label for="InputEmail">Email address</label>
+                                    <input type="email" class="form-control" id="InputEmail" name="email" placeholder="Your Email" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
-                                    <p class="help-block text-danger"></p>
+                                    <label for="InputMessage">Message Here</label>
+                                    <textarea cols="20" rows="5" class="form-control" id="InputMessage" name="message" placeholder="Your Message"></textarea>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
-                            </div>
+                                    <button type="submit" value="submit" class="btn btn-blue large">Submit</button>
+                                
+                            </form>
+
+
+                            <?php 
+                        } else { 
+                            $name = $_POST['name'];
+                            $email = $_POST['email'];
+                            $text = $_POST['message'];
+                            $subject = "Email submission from website";
+                            $emailto = "taylor.smith84@gmail.com";
+
+                            $header = "From: $name <$email>\r\nReply-To: $email\r\n";
+                            $header .= "MIME-Version: 1.0\r\n";
+                            $header .= "Content-type:text/html;charset=iso-8859-1\r\n";
+
+                            $message = "From: $name, Email: $email<br /><hr />$text";
+
+                            mail($emailto, $subject, $message, $header);
+
+                            echo "Your email has been sent, it will be proccessed within 48hours.";
+                        }
+
+                        ?>
+
                         </div>
-                    </form>
                 </div>
             </div>
             </div>
