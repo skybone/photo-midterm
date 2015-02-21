@@ -1,5 +1,5 @@
 <?php 
-$url = 'http://www.skylyy.com/photo-stream/photo-midterm/index.php';
+$url = 'http://www.skylyy.com/dist/index.php';
 exit(header("Location: ".$url));
 ?>
 <!DOCTYPE html>
