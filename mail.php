@@ -11,7 +11,7 @@
     $message = "From: $name, Email: $email<br /><hr />$text";
     mb_send_mail($emailto, $subject, $message, $headers);
     ob_flush();
-    header("Location: index.php");
+    header("Location: index.php?success");
 
 ?>
 

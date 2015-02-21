@@ -167,12 +167,13 @@
         <div class="row">
                 <div class="col-lg-12">
                     <h2>Contact</h2>
-                                <p>Have any questions or looking for something in perticular? Send me a message.</p>
+                            <?php $check = $_GET['success']; ?>
+
+                                <p <?php if(isset($_GET['success'])) { echo " style='display:none;'";}?>>Have any questions or looking for something in perticular? Send me a message.</p>
+                                <?php if(isset($_GET['success'])) { echo " <p>Thanks for you submission. We will be in touch soon.</p>'";}?>
                         <div class="row">
                             <div class="col-md-12">
-
-
-                            <form role="form" data-toggle="validator" name="contactform" method="post" action="mail.php">
+                            <form role="form"<?php if(isset($_GET['success'])) { echo " style='display:none;'";}?> data-toggle="validator" name="contactform" method="post" action="mail.php">
                                 <div class="row">
                                     <div class="col-md-6">
                                     <div class="form-group">
@@ -195,7 +196,6 @@
                                     <button type="submit" value="submit" class="btn btn-blue large">Submit</button>
                                 
                             </form>
-
 
                         </div>
                 </div>
