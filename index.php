@@ -64,6 +64,9 @@
                     <li>
                         <a class="page-scroll" href="#socia">Social</a>
                     </li>
+                    <li>
+                        <a class="page-scroll" href="#contact2">Contact</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
